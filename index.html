@@ -4,161 +4,518 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Reem Younes — UX Writer and Content Designer specializing in clear digital experiences, content systems, and bilingual UX.">
-  <title>Reem Younes | UX Writer & Content Designer</title>
+  <meta name="description" content="Reem Younes — UX Writer & Content Designer. Bilingual UX writing, content strategy, localization, and content systems.">
+  <meta name="theme-color" content="#F7F8F3">
+  <title>Reem Younes — UX Writer & Content Designer</title>
   <style>
     :root {
+      --bg: #F7F8F3;
+      --white: #FFFFFF;
       --green: #244D3A;
+      --deep: #173A2B;
       --sage: #B8D8C4;
-      --cream: #F8F9F5;
-      --ink: #242B27;
-      --muted: #536158;
+      --pale: #E7F0E7;
+      --mint: #D5E9DB;
+      --ink: #202B24;
+      --muted: #526157;
+      --line: #DCE5DB;
     }
+
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      background: var(--cream);
+      background: var(--bg);
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
     }
+
     a { color: inherit; }
+
     a:focus-visible {
       outline: 3px solid var(--green);
       outline-offset: 4px;
+      border-radius: 4px;
     }
+
     .container {
-      width: min(1100px, 90%);
-      margin: auto;
+      width: min(1160px, 90%);
+      margin: 0 auto;
     }
-    header {
-      border-bottom: 1px solid #dce5dc;
+
+    .site-header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
     }
-    nav {
+
+    .nav {
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 24px 0;
-    }
-    .logo {
-      color: var(--green);
-      font-size: 27px;
-      font-weight: 800;
-      text-decoration: none;
-      letter-spacing: -1.5px;
-    }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
       gap: 24px;
     }
-    .links a {
+
+    .logo {
+      font-size: 29px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .nav-links a {
       text-decoration: none;
       font-size: 14px;
+      font-weight: 600;
     }
-    .links a:hover { text-decoration: underline; }
+
+    .nav-links a:hover { color: var(--green); }
+
     .hero {
-      padding: 115px 0 125px;
-      max-width: 850px;
+      padding: 112px 0 120px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 65px;
+      align-items: center;
     }
+
     .eyebrow {
       color: var(--green);
-      font-weight: 700;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
+
+    h1, h2, h3, p { margin-top: 0; }
+
     h1 {
-      font-size: clamp(44px, 7vw, 82px);
-      line-height: 1.1;
-      letter-spacing: -3px;
-      margin: 24px 0;
+      font-size: clamp(48px, 6.5vw, 88px);
+      line-height: 1.06;
+      letter-spacing: -4px;
+      margin: 24px 0 30px;
+      max-width: 760px;
     }
-    .intro {
-      font-size: clamp(18px, 2.5vw, 23px);
+
+    .accent { color: var(--green); }
+
+    .hero-description {
+      max-width: 620px;
       color: var(--muted);
-      max-width: 700px;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.7;
     }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
     .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 50px;
+      padding: 12px 23px;
       background: var(--green);
       color: white;
+      border: 2px solid var(--green);
+      border-radius: 9px;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .2s, background .2s;
     }
-    .button:hover { background: #173527; }
-    section {
-      padding: 80px 0;
-      border-top: 1px solid #dce5dc;
+
+    .button:hover {
+      background: var(--deep);
+      transform: translateY(-2px);
     }
-    h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      letter-spacing: -1px;
-      margin: 0 0 15px;
-    }
-    .section-intro {
-      max-width: 650px;
-      color: var(--muted);
-      margin-bottom: 35px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: #e3efe6;
-      border-radius: 16px;
-      padding: 35px;
-      min-height: 240px;
-    }
-    .card:nth-child(2) { background: #d8e8dc; }
-    .card:nth-child(3) { background: #eaece4; }
-    .card h3 {
+
+    .button.secondary {
+      background: transparent;
       color: var(--green);
-      font-size: 23px;
-      line-height: 1.3;
     }
-    .card p { color: #435449; }
-    .tag {
-      font-size: 12px;
-      text-transform: uppercase;
+
+    .button.secondary:hover {
+      background: var(--pale);
+    }
+
+    .hero-art {
+      background: var(--mint);
+      border-radius: 32px;
+      min-height: 390px;
+      padding: 30px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-art::before {
+      content: "";
+      width: 280px;
+      height: 280px;
+      border: 2px solid rgba(36,77,58,.2);
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(55px,-55px);
+    }
+
+    .hero-art::after {
+      content: "Aa";
+      position: absolute;
+      right: -12px;
+      bottom: -90px;
+      font-size: 240px;
+      font-weight: 800;
+      color: rgba(36,77,58,.08);
+      letter-spacing: -20px;
+    }
+
+    .art-card {
+      position: relative;
+      z-index: 1;
+      background: var(--white);
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(23,58,43,.12);
+      transform: rotate(-5deg);
+      width: min(100%, 290px);
+    }
+
+    .art-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 700;
       letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .art-card strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 15px 0;
+      color: var(--deep);
+    }
+
+    .art-line {
+      height: 8px;
+      border-radius: 20px;
+      background: var(--pale);
+      margin-top: 10px;
+    }
+
+    .art-line.short { width: 65%; }
+
+    .section {
+      padding: 100px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .section-number {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: clamp(36px, 5vw, 58px);
+      letter-spacing: -2px;
+      line-height: 1.15;
+      margin: 12px 0 0;
+    }
+
+    .section-description {
+      max-width: 390px;
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 26px;
+    }
+
+    .project {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .project-visual {
+      height: 280px;
+      background: var(--pale);
+      padding: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project:nth-child(2) .project-visual {
+      background: #D7E7DA;
+    }
+
+    .project:nth-child(3) .project-visual {
+      background: #E6EAE0;
+    }
+
+    .project:nth-child(4) .project-visual {
+      background: #DCECE5;
+    }
+
+    .visual-panel {
+      background: white;
+      width: min(100%, 330px);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 12px 35px rgba(23,58,43,.09);
+    }
+
+    .visual-title {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .visual-text {
+      height: 9px;
+      background: #DDE8DF;
+      border-radius: 10px;
+      margin: 12px 0;
+    }
+
+    .visual-text.small { width: 60%; }
+    .visual-text.medium { width: 82%; }
+
+    .visual-button {
+      margin-top: 20px;
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 7px;
+      font-size: 12px;
       font-weight: 700;
     }
-    .about-text {
-      max-width: 750px;
-      font-size: 19px;
+
+    .language-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
-    footer {
-      padding: 35px 0;
+
+    .language-box {
+      padding: 15px 10px;
+      border-radius: 10px;
+      background: var(--pale);
+      text-align: center;
+      color: var(--green);
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .flow-steps {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flow-step {
+      background: var(--pale);
+      padding: 12px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      text-align: center;
+    }
+
+    .flow-arrow { color: var(--green); }
+
+    .project-content { padding: 30px; }
+
+    .project-category {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 25px;
+      line-height: 1.3;
+      letter-spacing: -.6px;
+      margin: 12px 0;
+    }
+
+    .project-content p {
       color: var(--muted);
-      font-size: 14px;
-      border-top: 1px solid #dce5dc;
+      font-size: 15px;
+      margin-bottom: 15px;
     }
+
+    .project-status {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--pale);
+      padding: 7px 12px;
+      border-radius: 30px;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-copy {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      border: 1px solid #C9D8CB;
+      border-radius: 40px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .contact-section {
+      background: var(--deep);
+      color: white;
+      padding: 100px 0;
+    }
+
+    .contact-section h2 {
+      max-width: 720px;
+      font-size: clamp(42px, 6vw, 72px);
+    }
+
+    .contact-section p {
+      color: #D5E7D9;
+      max-width: 550px;
+      font-size: 18px;
+      margin-top: 25px;
+    }
+
+    .contact-section .button {
+      background: white;
+      border-color: white;
+      color: var(--deep);
+    }
+
+    .contact-section .button:hover {
+      background: var(--sage);
+      border-color: var(--sage);
+    }
+
+    footer {
+      background: var(--deep);
+      color: #D5E7D9;
+      border-top: 1px solid rgba(255,255,255,.18);
+      padding: 28px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 80px 0;
+      }
+      .hero-art { min-height: 300px; }
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+
     @media (max-width: 650px) {
-      .hero { padding: 75px 0 85px; }
-      h1 { letter-spacing: -1.5px; }
-      section { padding: 60px 0; }
-      .grid { grid-template-columns: 1fr; }
-      .card { min-height: 190px; }
+      .container { width: 90%; }
+      .nav {
+        min-height: 75px;
+        gap: 12px;
+      }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 13px; }
+      .hero { padding: 65px 0 75px; gap: 35px; }
+      h1 { letter-spacing: -2px; }
+      .section { padding: 70px 0; }
+      .section-heading {
+        display: block;
+        margin-bottom: 30px;
+      }
+      .section-description { margin-top: 18px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-visual { height: 235px; }
+      .project-content { padding: 24px; }
+      .contact-section { padding: 75px 0; }
     }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      .button { transition: none; }
+      .button:hover { transform: none; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="container" aria-label="Main navigation">
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
       <a class="logo" href="#home">reem.</a>
-      <div class="links">
+      <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -168,66 +525,192 @@
 
   <main>
     <div class="container">
-      <div class="hero" id="home">
-        <p class="eyebrow">UX Writer & Content Designer</p>
-        <h1>Making complex things feel simple.</h1>
-        <p class="intro">
-          Hi, I'm Reem. I create clear, thoughtful
-          content that helps people navigate digital
-          experiences with confidence — across
-          products, journeys, and languages.
-        </p>
-        <a class="button" href="#work">Explore my work ↗</a>
-      </div>
+      <section class="hero" id="home">
+        <div>
+          <p class="eyebrow">UX Writer & Content Designer</p>
+          <h1>Clarity is <span class="accent">by design.</span></h1>
+          <p class="hero-description">
+            Hi, I'm Reem. I shape content that helps people
+            understand, navigate, and interact with digital
+            products — across journeys, systems, and languages.
+          </p>
+          <div class="actions">
+            <a class="button" href="#work">Explore my work ↗</a>
+            <a class="button secondary" href="#about">More about me</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-card">
+            <div class="art-label">Content makes a difference</div>
+            <strong>Less confusion.<br>More clarity.</strong>
+            <div class="art-line"></div>
+            <div class="art-line short"></div>
+            <div class="art-line"></div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <section id="work">
+    <section class="section" id="work">
       <div class="container">
-        <h2>Selected work.</h2>
-        <p class="section-intro">
-          A look at the content challenges, decisions,
-          and approaches behind better digital experiences.
-          Case studies are coming soon.
-        </p>
-        <div class="grid">
-          <article class="card">
-            <p class="tag">UX Writing</p>
-            <h3>Making complex journeys clearer</h3>
-            <p>Exploring clarity, guidance, and decision-making across digital journeys.</p>
+        <div class="section-heading">
+          <div>
+            <span class="section-number">01 / SELECTED WORK</span>
+            <h2>Words with purpose.</h2>
+          </div>
+          <p class="section-description">
+            A selection of content design themes and
+            approaches. Detailed case studies are in progress.
+          </p>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project">
+            <div class="project-visual" aria-hidden="true">
+              <div class="visual-panel">
+                <div class="visual-title">A clearer experience</div>
+                <div class="visual-text"></div>
+                <div class="visual-text medium"></div>
+                <div class="visual-text small"></div>
+                <div class="visual-button">Continue →</div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">UX Writing</span>
+              <h3>Making complex journeys easier to follow</h3>
+              <p>
+                Exploring how clear instructions, contextual
+                guidance, and actionable messages can support
+                users across digital journeys.
+              </p>
+              <span class="project-status">Case study in progress</span>
+            </div>
           </article>
-          <article class="card">
-            <p class="tag">Localization</p>
-            <h3>Designing across languages</h3>
-            <p>Creating consistent, understandable experiences in Arabic and English.</p>
+
+          <article class="project">
+            <div class="project-visual" aria-hidden="true">
+              <div class="visual-panel">
+                <div class="visual-title">Across languages</div>
+                <div class="language-pair">
+                  <div class="language-box">EN</div>
+                  <div class="language-box" lang="ar" dir="rtl">عربي</div>
+                </div>
+                <div class="visual-text"></div>
+                <div class="visual-text medium"></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Localization</span>
+              <h3>Designing for more than one language</h3>
+              <p>
+                Exploring bilingual UX writing, terminology,
+                localization decisions, and consistency
+                across Arabic and English experiences.
+              </p>
+              <span class="project-status">Case study in progress</span>
+            </div>
           </article>
-          <article class="card">
-            <p class="tag">Content Systems</p>
-            <h3>Writing for consistency at scale</h3>
-            <p>Exploring terminology, reusable content patterns, and design systems.</p>
+
+          <article class="project">
+            <div class="project-visual" aria-hidden="true">
+              <div class="visual-panel">
+                <div class="visual-title">A consistent journey</div>
+                <div class="flow-steps">
+                  <div class="flow-step">Start</div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-step">Review</div>
+                  <span class="flow-arrow">→</span>
+                  <div class="flow-step">Done</div>
+                </div>
+                <div class="visual-text"></div>
+                <div class="visual-text small"></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Content Design</span>
+              <h3>Connecting content across journeys</h3>
+              <p>
+                Looking at content hierarchy, user needs,
+                and consistency from one interaction
+                to the next.
+              </p>
+              <span class="project-status">Case study in progress</span>
+            </div>
           </article>
+
+          <article class="project">
+            <div class="project-visual" aria-hidden="true">
+              <div class="visual-panel">
+                <div class="visual-title">Content patterns</div>
+                <div class="visual-text"></div>
+                <div class="visual-text medium"></div>
+                <div class="visual-button">Reusable pattern</div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Content Systems</span>
+              <h3>Building consistency into content</h3>
+              <p>
+                Exploring naming conventions, reusable
+                microcopy, terminology, and content
+                design system practices.
+              </p>
+              <span class="project-status">Case study in progress</span>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container">
-        <h2>A little about me.</h2>
-        <p class="about-text">
-          I'm a bilingual UX Writer and Content Designer
-          with experience across digital products,
-          financial services, and public-sector platforms.
-          My work brings together UX writing, content
-          design, localization, and cross-functional
-          collaboration to make complex experiences
-          easier to understand.
-        </p>
+    <section class="section" id="about">
+      <div class="container about-layout">
+        <div>
+          <span class="section-number">02 / ABOUT ME</span>
+          <h2>Thoughtful content. Better experiences.</h2>
+        </div>
+
+        <div>
+          <p class="about-copy">
+            I'm Reem, a bilingual UX Writer and Content
+            Designer with experience across digital
+            products, financial services, and public-sector
+            platforms.
+          </p>
+          <p class="about-copy">
+            I work with designers and product teams to
+            shape content across user journeys, improve
+            consistency, and make complex information
+            easier to understand.
+          </p>
+
+          <div class="skills" aria-label="Areas of expertise">
+            <span class="skill">UX Writing</span>
+            <span class="skill">Content Design</span>
+            <span class="skill">Microcopy</span>
+            <span class="skill">Content Strategy</span>
+            <span class="skill">Localization</span>
+            <span class="skill">Arabic & English</span>
+            <span class="skill">Design Systems</span>
+            <span class="skill">UX Content QA</span>
+            <span class="skill">Figma</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="contact-section" id="contact">
       <div class="container">
-        <h2>Let's connect.</h2>
-        <p>Interested in working together? Find me on LinkedIn.</p>
+        <span class="eyebrow" style="color:#B8D8C4">
+          03 / GET IN TOUCH
+        </span>
+        <h2>Good experiences start with a conversation.</h2>
+        <p>
+          Interested in collaborating or discussing
+          content design opportunities? Let's connect.
+        </p>
         <a class="button"
            href="https://www.linkedin.com/in/reemyounes/"
            target="_blank"
@@ -239,9 +722,11 @@
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Reem Younes. All rights reserved.
+    <div class="container footer-inner">
+      <span>© 2026 Reem Younes</span>
+      <span>UX Writer & Content Designer</span>
     </div>
   </footer>
+
 </body>
 </html>
